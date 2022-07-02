@@ -1,8 +1,10 @@
 import React from 'react'
 
-const SimilarExercises = () => {
+const SimilarExercises = ({ targetMuscleExercises, equipmentExercises}) => {
   return (
-    <div>SimilarExercises</div>
+    <div>
+
+    </div>
   )
 }
 

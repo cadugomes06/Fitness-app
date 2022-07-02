@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Stack, Typography } from '@mui/material'
+import { Stack, Typography } from '@mui/material'
 import Icon from '../Assets/icons/gym.png'
 
 const BodyPart = ({item, setBodyPart, bodyPart}) => {
