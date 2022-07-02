@@ -1,5 +1,5 @@
 import React from 'react';
-import Pagination  from '@mui/material/Pagination';
+import Pagination from '@mui/material/Pagination';
 import {Box, Stack, Typography} from '@mui/material';
 import ExerciseCard from './ExerciseCard';
 import { exerciseOptions, fetchData } from '../utils/fetchData';
@@ -28,6 +28,7 @@ const Excercises = ({ exercises, setExercises, bodyPart}) => {
   const indexOfLastExercise = currentPage * exercisesPerPage
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage
   const currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExercise)
+ 
 
   const paginate = (e, value) => {
     setCurrentPage(value)
@@ -55,12 +56,12 @@ const Excercises = ({ exercises, setExercises, bodyPart}) => {
 
           <Stack sx={{mt: {lg: '114px', xs: '70px'}}} alignItems='center'> 
 
-              {exercises.length > 9 && (
+              {exercises.length > 12 && (
                 <Pagination 
                    color='standard'
                    shape='rounded'
                    defaultPage={1}
-                   count={(Math.ceil(exercises.length) /  exercisesPerPage).toFixed(0)}
+                   count={exercisesPerPage}
                    page={currentPage}
                    onChange={paginate}
                    size='large'

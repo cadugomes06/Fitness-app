@@ -23,17 +23,14 @@ const ExerciseDetail = () => {
        setExerciseDetail(exerciseDetailData)
 
       const exerciseVideosData = await fetchData(`${youtubeSearchUrl}/search?query=
-      ${exerciseDetailData.name}`, youtubeOptions)
+      ${exerciseDetailData.name} exercise`, youtubeOptions)
       setExerciseVideos(exerciseVideosData.contents)
 
-      const targetMuscleExerciseData = await fetchData(`${exerciseDbUrl}/exercises/
-      target/${exerciseDetailData.target}`, exerciseOptions)
-      setTargetMuscleExercises(targetMuscleExerciseData)
+      const targetMuscleExercisesData = await fetchData(`${exerciseDbUrl}/exercises/target/${exerciseDetailData.target}`, exerciseOptions);
+      setTargetMuscleExercises(targetMuscleExercisesData);
 
-      
-      const equipmentMuscleExerciseData = await fetchData(`${exerciseDbUrl}/exercises/
-      equipment/${exerciseDetailData.equipment}`, exerciseOptions)
-      setEquipmentExercises(equipmentMuscleExerciseData)
+      const equimentExercisesData = await fetchData(`${exerciseDbUrl}/exercises/equipment/${exerciseDetailData.equipment}`, exerciseOptions);
+      setEquipmentExercises(equimentExercisesData);
       }
      fetchExerciseData()
     }, [id])
@@ -42,10 +39,14 @@ const ExerciseDetail = () => {
     <Box>
        <Detail exerciseDetail={exerciseDetail} /> 
        <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
-        <SimilarExercises targetMuscleExercises={targetMuscleExercises} 
-        equipmentExercises={equipmentExercises} />
+       <SimilarExercises targetMuscleExercises={targetMuscleExercises} 
+       equipmentExercises={equipmentExercises} />
+       
     </Box>
   )
 }
 
 export default ExerciseDetail
+/*<ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
+<SimilarExercises targetMuscleExercises={targetMuscleExercises} 
+equipmentExercises={equipmentExercises} />*/

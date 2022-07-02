@@ -27,7 +27,7 @@ const Detail = ({ exerciseDetail }) => {
   return (
     <Stack gap='60px' sx={{
       flexDirection: {lg: 'row'}, p: '20px', alignItems: 'center', mt: '2rem'}}>
-        <img src={gifUrl} alt={name} Loading='lazy' style={{marginLeft: '4rem', height:'500px'}} />
+        <img src={gifUrl} alt={name} loading='lazy' style={{marginLeft: '4rem', height:'500px'}} />
         <Stack sx={{ gap: {lg: '35px', xs: '20px'}}}>
           <Typography variant='h3' mt='6rem'>
             {name}
@@ -37,7 +37,7 @@ const Detail = ({ exerciseDetail }) => {
             para {target}. Irá melhorar sua saúde e condicionamento físico.  
           </Typography>
           {extraDetail.map((item) => (
-            <Stack key={item.name} direction='row'
+            <Stack key={item.icon} direction='row'
              gap='24px' alignItems='center'>
                 <Button sx={{ background: '#fff2db', 
                  borderRadius: '50%', width: '100px', height: '100px'}}>
